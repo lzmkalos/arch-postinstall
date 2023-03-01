@@ -37,11 +37,21 @@ class Arch:
             pkg=Popen(cmd,shell=True,stdin=PIPE,stderr=PIPE);
             pkg.wait();
             print(f"{Fore.GREEN} Done!");
+    
+    def make_links(self)->None:
+        folder_arr = ["alacritty", "macchina", "qtile", "rofi", "zathura", "starship"];
+        for folder in folder_arr:
+            print(f"\n> working on path [{Fore.RED}{folder}{Fore.LIGHTWHITE_EX}] ...");
+            cmd=f'mkdir ~/.config/{str(folder)}';
+            pkg=Popen(cmd,shell=True,stdin=PIPE,stderr=PIPE);
+            pkg.wait();
+            print(f"{Fore.GREEN} Done!");
 
 def main()->None:
     pkg=[xorg_list, misc_list, soft_list];
     obj=Arch(pkg);
     obj.start_daemons();
+    obj.make_links();
 
 if __name__=="__main__":
     main();

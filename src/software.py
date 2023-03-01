@@ -36,6 +36,7 @@ soft_list=[
     'xournalpp',             # digital notes and drawing software 
     'gdb',                   # allow us run on vscode g++ compiler                   
     'qtile',                 # default windows manager
+    'alacritty',             # best terminal emulator
 
     # GRAPHICS AND DESIGN -------------------------------------------------
     'gcolor2',               # colorpicker
